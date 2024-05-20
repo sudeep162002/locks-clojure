@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  clojure-development:
+    image: clojure
+    container_name: clojure-development
+    ports:
+      - "3000:3000"
+    volumes:
+      - /D/web_development:/src
+    working_dir: /src
+    tty: true
+    stdin_open: true
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
