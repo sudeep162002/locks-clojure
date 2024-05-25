@@ -1,29 +1,22 @@
 version: '3.8'
 
 services:
-  clojure-locks:
-    image: clojure
-    container_name: clojure-locks
+  lock-manager:
+    image: sudeep162002/lock-manager:latest
+    container_name: lock-manager
     ports:
       - "3000:3000"
-    volumes:
-      - /D/web_development:/src
-    working_dir: /src
-    tty: true
-    stdin_open: true
-    depends_on:
-      - redis
     networks:
-      - locks-net
+      - locks-network
 
   redis:
     image: redis
-    container_name: redis
+    container_name: redis-container
     ports:
       - "6379:6379"
     networks:
-      - locks-net
+      - locks-network
 
 networks:
-  locks-net:
+  locks-network:
     driver: bridge
