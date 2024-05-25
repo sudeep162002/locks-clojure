@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  clojure-development:
+  clojure-locks:
     image: clojure
-    container_name: clojure-development
+    container_name: clojure-locks
     ports:
       - "3000:3000"
     volumes:
@@ -14,7 +14,7 @@ services:
     depends_on:
       - redis
     networks:
-      - app-network
+      - locks-net
 
   redis:
     image: redis
@@ -22,8 +22,8 @@ services:
     ports:
       - "6379:6379"
     networks:
-      - app-network
+      - locks-net
 
 networks:
-  app-network:
+  locks-net:
     driver: bridge

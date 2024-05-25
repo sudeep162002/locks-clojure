@@ -37,7 +37,7 @@ You can configure this with the setting:
 ; 
 
 ; Starting Jack-in Terminal: (cd /src/clojure/locks/locks; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless)
-; Using host:port 127.0.0.1:40565 ...
+; Using host:port 127.0.0.1:36725 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -48,496 +48,56 @@ about why stdout printed to this file is prepended with `;` to be line comments.
 clj꞉locks.core꞉> 
 ; Jack-in done.
 clj꞉locks.core꞉> 
-#'locks.core/-main
-clj꞉locks.core꞉> 
-#'locks.core/-main
-clj꞉locks.core꞉> 
-#'locks.handlers.users/delete-users
-clj꞉locks.handlers.users꞉> 
-; Syntax error compiling at (src/locks/routes/routes.clj:15:3).
-; No such var: wahu/getHandler
-clj꞉locks.routes.routes꞉> 
-#'locks.core/-main
-clj꞉locks.core꞉> 
-#'locks.core/-main
-clj꞉locks.core꞉> 
-(start-server)
-; Server started on port 3000
-nil
-; 
-; 2024-05-23 07:15:33.759:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:15:34.160:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started ServerConnector@4f66e922{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; 2024-05-23 07:15:34.161:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started @888965ms
-clj꞉locks.core꞉> 
-; 2024-05-23 07:16:22.845:WARN:oejs.HttpChannel:qtp67114784-96: /
-; java.lang.NullPointerException: Response map is nil
-; 	at ring.util.servlet$update_servlet_response.invokeStatic(servlet.clj:102)
-; 	at ring.util.servlet$update_servlet_response.invoke(servlet.clj:93)
-; 	at ring.util.servlet$update_servlet_response.invokeStatic(servlet.clj:97)
-; 	at ring.adapter.jetty$proxy_handler$fn__418.invoke(jetty.clj:27)
-; 	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
-; 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-; 	at org.eclipse.jetty.server.Server.handle(Server.java:516)
-; 	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
-; 	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
-; 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
-; 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-; 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(
-
-#'locks.handlers.users/lmHealth
-clj꞉locks.handlers.users꞉> 
-#'locks.routes.routes/app-routes
-clj꞉locks.routes.routes꞉> 
-#'locks.core/-main
-clj꞉locks.core꞉> 
-(stop-server)
-; Server stopped
-nil
-; 
-; 2024-05-23 07:18:06.770:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Stopped ServerConnector@4f66e922{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-clj꞉locks.core꞉> 
-(start-server)
-; Server started on port 3000
-nil
-; 
-; 2024-05-23 07:18:12.402:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:18:12.405:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started ServerConnector@dc68b36{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; 2024-05-23 07:18:12.405:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started @1047210ms
-clj꞉locks.core꞉> 
-; 2024-05-23 07:18:37.978:WARN:oejs.HttpChannel:qtp1793081274-107: /
-; clojure.lang.ArityException: Wrong number of args (1) passed to: locks.handlers.users/lmHealth
-; 	at clojure.lang.AFn.throwArity(AFn.java:429)
-; 	at clojure.lang.AFn.invoke(AFn.java:32)
-; 	at compojure.response$fn__3819.invokeStatic(response.clj:47)
-; 	at compojure.response$fn__3819.invoke(response.clj:35)
-; 	at compojure.response$fn__3769$G__3764__3776.invoke(response.clj:7)
-; 	at compojure.core$wrap_response$fn__5293.invoke(core.clj:158)
-; 	at compojure.core$wrap_route_middleware$fn__5277.invoke(core.clj:128)
-; 	at compojure.core$wrap_route_info$fn__5282.invoke(core.clj:137)
-; 	at compojure.core$wrap_route_matches$fn__5286.invoke(core.clj:146)
-; 	at compojure.core$routing$fn__5301.invoke(core.clj:185)
-; 	at clojure.core$some.invokeStatic(core.clj:2718)
-; 	at compojure.core$routing.invokeStatic(core.clj:182)
-; 	at compojure.core$routing.doInvoke(core.clj:182)
-; 	at clojure.lang.RestFn.applyTo(RestFn.java:139)
-; 	at clojure.core$apply.invokeStatic(core.clj:669)
-; 	at compojure.core$routes$fn__5305.invoke(core.clj:190)
-; 	at ring.middleware.keyword_params$wrap_keyword_params$fn__621.invoke(keyword_params.clj:53)
-; 	at ring.middleware.params$wrap_params$fn__585.invoke(params.clj:67)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_response$wrap_format_response$fn__3657.invoke(format_response.clj:194)
-; 	at ring.adapter.jetty$proxy_handler$fn__418.invoke(jetty.clj:27)
-; 	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
-; 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-; 	at org.eclipse.jetty.server.Server.handle(Server.java:516)
-; 	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
-; 	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
-; 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
-; 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-; 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-; 	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-; 	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.p
-
-#'locks.handlers.users/lmHealth
+#'locks.handlers.users/releaseLocks
 clj꞉locks.handlers.users꞉> 
 #'locks.routes.routes/app-routes
 clj꞉locks.routes.routes꞉> 
 #'locks.core/-main
 clj꞉locks.core꞉> 
 (start-server)
-; 2024-05-23 07:22:27.045:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:22:27.047:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Stopped ServerConnector@6ca10a53{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
-; Address already in use
-clj꞉locks.core꞉> 
-(stop-server)
-; Server stopped
-nil
-; 
-; 2024-05-23 07:22:39.538:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Stopped ServerConnector@dc68b36{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-clj꞉locks.core꞉> 
-(start-server)
 ; Server started on port 3000
 nil
-; 
-; 2024-05-23 07:22:46.086:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:22:46.089:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started ServerConnector@6e6e6d03{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; 2024-05-23 07:22:46.089:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started @1320895ms
-clj꞉locks.core꞉> 
-; 2024-05-23 07:22:55.455:WARN:oejs.HttpChannel:qtp81168139-155: /
-; clojure.lang.ArityException: Wrong number of args (1) passed to: locks.handlers.users/lmHealth
-; 	at clojure.lang.AFn.throwArity(AFn.java:429)
-; 	at clojure.lang.AFn.invoke(AFn.java:32)
-; 	at compojure.response$fn__3819.invokeStatic(response.clj:47)
-; 	at compojure.response$fn__3819.invoke(response.clj:35)
-; 	at compojure.response$fn__3769$G__3764__3776.invoke(response.clj:7)
-; 	at compojure.core$wrap_response$fn__5293.invoke(core.clj:158)
-; 	at compojure.core$wrap_route_middleware$fn__5277.invoke(core.clj:128)
-; 	at compojure.core$wrap_route_info$fn__5282.invoke(core.clj:137)
-; 	at compojure.core$wrap_route_matches$fn__5286.invoke(core.clj:146)
-; 	at compojure.core$routing$fn__5301.invoke(core.clj:185)
-; 	at clojure.core$some.invokeStatic(core.clj:2718)
-; 	at compojure.core$routing.invokeStatic(core.clj:182)
-; 	at compojure.core$routing.doInvoke(core.clj:182)
-; 	at clojure.lang.RestFn.applyTo(RestFn.java:139)
-; 	at clojure.core$apply.invokeStatic(core.clj:669)
-; 	at compojure.core$routes$fn__5305.invoke(core.clj:190)
-; 	at ring.middleware.keyword_params$wrap_keyword_params$fn__621.invoke(keyword_params.clj:53)
-; 	at ring.middleware.params$wrap_params$fn__585.invoke(params.clj:67)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_response$wrap_format_response$fn__3657.invoke(format_response.clj:194)
-; 	at ring.adapter.jetty$proxy_handler$fn__418.invoke(jetty.clj:27)
-; 	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
-; 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-; 	at org.eclipse.jetty.server.Server.handle(Server.java:516)
-; 	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
-; 	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
-; 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
-; 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-; 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-; 	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-; 	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
-; 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:773)
-; 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:905)
-; 	at java.base/java.lang.Thread.run(Thread.java:1583)
-; 2024-05-23 07:23:11.813:WARN:oejs.HttpChannel:qtp81168139-153: /
-; clojure.lang.ArityException: Wrong number of args (1) passed to: locks.handlers.users/lmHealth
-; 	at clojure.lang.AFn.throwArity(AFn.java:429)
-; 	at clojure.lang.AFn.invoke(AFn.java:32)
-; 	at compojure.response$fn__3819.invokeStatic(response.clj:47)
-; 	at compojure.response$fn__3819.invoke(response.clj:35)
-; 	at compojure.response$fn__3769$G__3764__3776.invoke(response.clj:7)
-; 	at compojure.core$wrap_response$fn__5293.invoke(core.clj:158)
-; 	at compojure.core$wrap_route_middleware$fn__5277.invoke(core.clj:128)
-; 	at compojure.core$wrap_route_info$fn__5282.invoke(core.clj:137)
-; 	at compojure.core$wrap_route_matches$fn__5286.invoke(core.clj:146)
-; 	at compojure.core$routing$fn__5301.invoke(core.clj:185)
-; 	at clojure.core$some.invokeStatic(core.clj:2718)
-; 	at compojure.core$routing.invokeStatic(core.clj:182)
-; 	at compojure.core$routing.doInvoke(core.clj:182)
-; 	at clojure.lang.RestFn.applyTo(RestFn.java:139)
-; 	at clojure.core$apply.invokeStatic(core.clj:669)
-; 	at compojure.core$routes$fn__5305.invoke(core.clj:190)
-; 	at ring.middleware.keyword_params$wrap_keyword_params$fn__621.invoke(keyword_params.clj:53)
-; 	at ring.middleware.params$wrap_params$fn__585.invoke(params.clj:67)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_response$wrap_format_response$fn__3657.invoke(format_response.clj:194)
-; 	at ring.adapter.jetty$proxy_handler$fn__418.invoke(jetty.clj:27)
-; 	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
-; 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-; 	at org.eclipse.jetty.server.Server.handle(Server.java:516)
-; 	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
-; 	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
-; 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
-; 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-; 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-; 	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-; 	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-; 	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedTh
-#'locks.routes.routes/app-routes
-clj꞉locks.routes.routes꞉> 
-#'locks.core/-main
-clj꞉locks.core꞉> 
-(start-server)
-; 2024-05-23 07:23:41.776:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:23:41.778:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Stopped ServerConnector@285efe62{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
-; Address already in use
-clj꞉locks.core꞉> 
-(stop-server)
-; Server stopped
-nil
-; 
-; 2024-05-23 07:23:51.358:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Stopped ServerConnector@6e6e6d03{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-clj꞉locks.core꞉> 
-(start-server)
-; Server started on port 3000
-nil
-; 
-; 2024-05-23 07:24:03.068:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:24:03.071:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started ServerConnector@1fff1e83{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; 2024-05-23 07:24:03.071:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started @1397877ms
-clj꞉locks.core꞉> 
-; 2024-05-23 07:24:12.511:WARN:oejs.HttpChannel:qtp154154314-192: /
-; clojure.lang.ArityException: Wrong number of args (1) passed to: locks.handlers.users/lmHealth
-; 	at clojure.lang.AFn.throwArity(AFn.java:429)
-; 	at clojure.lang.AFn.invoke(AFn.java:32)
-; 	at compojure.response$fn__3819.invokeStatic(response.clj:47)
-; 	at compojure.response$fn__3819.invoke(response.clj:35)
-; 	at compojure.response$fn__3769$G__3764__3776.invoke(response.clj:7)
-; 	at compojure.core$wrap_response$fn__5293.invoke(core.clj:158)
-; 	at compojure.core$wrap_route_middleware$fn__5277.invoke(core.clj:128)
-; 	at compojure.core$wrap_route_info$fn__5282.invoke(core.clj:137)
-; 	at compojure.core$wrap_route_matches$fn__5286.invoke(core.clj:146)
-; 	at compojure.core$routing$fn__5301.invoke(core.clj:185)
-; 	at clojure.core$some.invokeStatic(core.clj:2718)
-; 	at compojure.core$routing.invokeStatic(core.clj:182)
-; 	at compojure.core$routing.doInvoke(core.clj:182)
-; 	at clojure.lang.RestFn.applyTo(RestFn.java:139)
-; 	at clojure.core$apply.invokeStatic(core.clj:669)
-; 	at compojure.core$routes$fn__5305.invoke(core.clj:190)
-; 	at ring.middleware.keyword_params$wrap_keyword_params$fn__621.invoke(keyword_params.clj:53)
-; 	at ring.middleware.params$wrap_params$fn__585.invoke(params.clj:67)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_response$wrap_format_response$fn__3657.invoke(format_response.clj:194)
-; 	at ring.adapter.jetty$proxy_handler$fn__418.invoke(jetty.clj:27)
-; 	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
-; 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-; 	at org.eclipse.jetty.server.Server.handle(Server.java:516)
-; 	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
-; 	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
-; 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
-; 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-; 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-; 	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-; 	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:135)
-; 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:773)
-; 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:905)
-; 	at java.base/java.lang.Thread.run(Thread.java:1583)
-; 2024-05-23 07:24:13.960:WARN:oejs.HttpChannel:qtp154154314-191: /
-; clojure.lang.ArityException: Wrong number of args (1) passed to: locks.handlers.users/lmHealth
-; 	at clojure.lang.AFn.throwArity(AFn.java:429)
-; 	at clojure.lang.AFn.invoke(AFn.java:32)
-; 	at compojure.response$fn__3819.invokeStatic(response.clj:47)
-; 	at compojure.response$fn__3819.invoke(response.clj:35)
-; 	at compojure.response$fn__3769$G__3764__3776.invoke(response.clj:7)
-; 	at compojure.core$wrap_response$fn__5293.invoke(core.clj:158)
-; 	at compojure.core$wrap_route_middleware$fn__5277.invoke(core.clj:128)
-; 	at compojure.core$wrap_route_info$fn__5282.invoke(core.clj:137)
-; 	at compojure.core$wrap_route_matches$fn__5286.invoke(core.clj:146)
-; 	at compojure.core$routing$fn__5301.invoke(core.clj:185)
-; 	at clojure.core$some.invokeStatic(core.clj:2718)
-; 	at compojure.core$routing.invokeStatic(core.clj:182)
-; 	at compojure.core$routing.doInvoke(core.clj:182)
-; 	at clojure.lang.RestFn.applyTo(RestFn.java:139)
-; 	at clojure.core$apply.invokeStatic(core.clj:669)
-; 	at compojure.core$routes$fn__5305.invoke(core.clj:190)
-; 	at ring.middleware.keyword_params$wrap_keyword_params$fn__621.invoke(keyword_params.clj:53)
-; 	at ring.middleware.params$wrap_params$fn__585.invoke(params.clj:67)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_response$wrap_format_response$fn__3657.invoke(format_response.clj:194)
-; 	at ring.adapter.jetty$proxy_handler$fn__418.invoke(jetty.clj:27)
-; 	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
-; 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-; 	at org.eclipse.jetty.server.Server.handle(Server.java:516)
-; 	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
-; 	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
-; 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
-; 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-; 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-; 	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-; 	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:135)
-; 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:773)
-; 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:905)
-; 	at java.base/java.lang.Thread.run(Thread.java:1583)
-; 2024-05-23 07:24:18.868:WARN:oejs.HttpChannel:qtp154154314-194: /
-; clojure.lang.ArityException: Wrong number of args (1) passed to: locks.handlers.users/lmHealth
-; 	at clojure.lang.AFn.throwArity(AFn.java:429)
-; 	at clojure.lang.AFn.invoke(AFn.java:32)
-; 	at compojure.response$fn__3819.invokeStatic(response.clj:47)
-; 	at compojure.response$fn__3819.invoke(response.clj:35)
-; 	at compojure.response$fn__3769$G__3764__3776.invoke(response.clj:7)
-; 	at compojure.core$wrap_response$fn__5293.invoke(core.clj:158)
-; 	at compojure.core$wrap_route_middleware$fn__5277.invoke(core.clj:128)
-; 	at compojure.core$wrap_route_info$fn__5282.invoke(core.clj:137)
-; 	at compojure.core$wrap_route_matches$fn__5286.invoke(core.clj:146)
-; 	at compojure.core$routing$fn__5301.invoke(core.clj:185)
-; 	at clojure.core$some.invokeStatic(core.clj:2718)
-; 	at compojure.core$routing.invokeStatic(core.clj:182)
-; 	at compojure.core$routing.doInvoke(core.clj:182)
-; 	at clojure.lang.RestFn.applyTo(RestFn.java:139)
-; 	at clojure.core$apply.invokeStatic(core.clj:669)
-; 	at compojure.core$routes$fn__5305.invoke(core.clj:190)
-; 	at ring.middleware.keyword_params$wrap_keyword_params$fn__621.invoke(keyword_params.clj:53)
-; 	at ring.middleware.params$wrap_params$fn__585.invoke(params.clj:67)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_response$wrap_format_response$fn__3657.invoke(format_response.clj:194)
-; 	at ring.adapter.jetty$proxy_handler$fn__418.invoke(jetty.clj:27)
-; 	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
-; 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-; 	at org.eclipse.jetty.server.Server.handle(Server.java:516)
-; 	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
-; 	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
-; 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
-; 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-; 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-; 	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-; 	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-; 	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-; 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:773)
-; 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:905)
-; 	at java.base/java.lang.Thread.run(Thread.java:1583)
-; 2024-05-23 07:24:19.844:WARN:oejs.HttpChannel:qtp154154314-190: /
-; clojure.lang.ArityException: Wrong number of args (1) passed to: locks.handlers.users/lmHealth
-; 	at clojure.lang.AFn.throwArity(AFn.java:429)
-; 	at clojure.lang.AFn.invoke(AFn.java:32)
-; 	at compojure.response$fn__3819.invokeStatic(response.clj:47)
-; 	at compojure.response$fn__3819.invoke(response.clj:35)
-; 	at compojure.response$fn__3769$G__3764__3776.invoke(response.clj:7)
-; 	at compojure.core$wrap_response$fn__5293.invoke(core.clj:158)
-; 	at compojure.core$wrap_route_middleware$fn__5277.invoke(core.clj:128)
-; 	at compojure.core$wrap_route_info$fn__5282.invoke(core.clj:137)
-; 	at compojure.core$wrap_route_matches$fn__5286.invoke(core.clj:146)
-; 	at compojure.core$routing$fn__5301.invoke(core.clj:185)
-; 	at clojure.core$some.invokeStatic(core.clj:2718)
-; 	at compojure.core$routing.invokeStatic(core.clj:182)
-; 	at compojure.core$routing.doInvoke(core.clj:182)
-; 	at clojure.lang.RestFn.applyTo(RestFn.java:139)
-; 	at clojure.core$apply.invokeStatic(core.clj:669)
-; 	at compojure.core$routes$fn__5305.invoke(core.clj:190)
-; 	at ring.middleware.keyword_params$wrap_keyword_params$fn__621.invoke(keyword_params.clj:53)
-; 	at ring.middleware.params$wrap_params$fn__585.invoke(params.clj:67)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_params$wrap_format_params$fn__2808.invoke(format_params.clj:92)
-; 	at ring.middleware.format_response$wrap_format_response$fn__3657.invoke(format_response.clj:194)
-; 	at ring.adapter.jetty$proxy_handler$fn__418.invoke(jetty.clj:27)
-; 	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
-; 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-; 	at org.eclipse.jetty.server.Server.handle(Server.java:516)
-; 	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
-; 	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
-; 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
-; 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-; 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
-; 	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
-; 	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
-; 	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
-; 	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
-; 	at org.e
-#'locks.routes.routes/app-routes
-clj꞉locks.routes.routes꞉> 
-#'locks.handlers.users/lmHealth
-clj꞉locks.handlers.users꞉> 
-#'locks.core/-main
-clj꞉locks.core꞉> 
-(stop-server)
-; Server stopped
-nil
-; 
-; 2024-05-23 07:25:33.487:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Stopped ServerConnector@1fff1e83{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-clj꞉locks.core꞉> 
-(start-server)
-; Server started on port 3000
-nil
-; 
-; 2024-05-23 07:25:38.151:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:25:38.154:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started ServerConnector@3b5f0a63{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; 2024-05-23 07:25:38.154:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started @1492961ms
 clj꞉locks.core꞉> 
 ; health check function called
+; starting locking......
 (stop-server)
 ; Server stopped
 nil
-; 
-; 2024-05-23 07:26:04.104:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Stopped ServerConnector@3b5f0a63{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
 clj꞉locks.core꞉> 
-; Syntax error compiling at (src/locks/routes/routes.clj:16:34).
-; No such var: wahu/giveLocks
-clj꞉locks.routes.routes꞉> 
-#'locks.handlers.users/giveLocks
+#'locks.handlers.users/releaseLocks
 clj꞉locks.handlers.users꞉> 
 #'locks.core/-main
 clj꞉locks.core꞉> 
 (start-server)
 ; Server started on port 3000
 nil
-; 
-; 2024-05-23 07:42:10.106:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:42:10.109:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started ServerConnector@6d0b06d4{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; 2024-05-23 07:42:10.110:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started @2484935ms
 clj꞉locks.core꞉> 
-; 2024-05-23 07:42:15.314:WARN:oejs.HttpChannel:qtp2051678152-238: /get-lock
-; java.lang.NullPointerException: Response map is nil
-; 	at ring.util.servlet$update_servlet_response.invokeStatic(servlet.clj:102)
-; 	at ring.util.servlet$update_servlet_response.invoke(servlet.clj:93)
-; 	at ring.util.servlet$update_servlet_response.invokeStatic(servlet.clj:97)
-; 	at ring.adapter.jetty$proxy_handler$fn__418.invoke(jetty.clj:27)
-; 	at ring.adapter.jetty.proxy$org.eclipse.jetty.server.handler.AbstractHandler$ff19274a.handle(Unknown Source)
-; 	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
-; 	at org.eclipse.jetty.server.Server.handle(Server.java:516)
-; 	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:388)
-; 	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:633)
-; 	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:380)
-; 	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
-; 	at org.eclipse.jetty.io.AbstractConnection$ReadCallback
-
-
-#'locks.handlers.users/giveLocks
+; starting locking......
+; starting locking......
+; starting locking......
+(*res)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:78:1).
+; Unable to resolve symbol: *res in this context
+clj꞉locks.core꞉> 
+; Syntax error compiling at (src/locks/handlers/users.clj:121:13).
+; Unable to resolve symbol: resource in this context
 clj꞉locks.handlers.users꞉> 
-#'locks.routes.routes/app-routes
-clj꞉locks.routes.routes꞉> 
+*res
+"resource1"
+clj꞉locks.handlers.users꞉> 
+(set-key-with-ttl  *res *ide (int *dur))
+; Execution error (ClassCastException) at (REPL:1).
+; null
+clj꞉locks.handlers.users꞉> 
+(set-key-with-ttl  *res *ide ( *dur))
+; Execution error (ClassCastException) at locks.handlers.users/eval10732 (form-init3501890706118244856.clj:92).
+; class java.lang.String cannot be cast to class clojure.lang.IFn (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉locks.handlers.users꞉> 
 #'locks.core/-main
 clj꞉locks.core꞉> 
 (stop-server)
 ; Server stopped
 nil
-; 
-; 2024-05-23 07:44:06.983:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Stopped ServerConnector@6d0b06d4{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-clj꞉locks.core꞉> 
-(start-server)
-; Server started on port 3000
-nil
-; 
-; 2024-05-23 07:44:14.204:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:44:14.207:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started ServerConnector@4176872b{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; 2024-05-23 07:44:14.207:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started @2609034ms
 clj꞉locks.core꞉> 
 #'locks.handlers.users/releaseLocks
 clj꞉locks.handlers.users꞉> 
@@ -545,17 +105,216 @@ clj꞉locks.handlers.users꞉> 
 clj꞉locks.routes.routes꞉> 
 #'locks.core/-main
 clj꞉locks.core꞉> 
-(stop-server)
-; Server stopped
-nil
-; 
-; 2024-05-23 07:47:26.054:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Stopped ServerConnector@4176872b{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
+#'locks.core/-main
 clj꞉locks.core꞉> 
 (start-server)
 ; Server started on port 3000
 nil
-; 
-; 2024-05-23 07:47:31.345:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
-; 2024-05-23 07:47:31.348:INFO:oejs.AbstractConnector:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started ServerConnector@2edab041{HTTP/1.1, (http/1.1)}{0.0.0.0:3000}
-; 2024-05-23 07:47:31.349:INFO:oejs.Server:nREPL-session-7a4b4693-9172-4afc-9416-538c6aaf40c2: Started @2806176ms
 clj꞉locks.core꞉> 
+; starting locking......
+(set-key-with-ttl  *res *ide *dur)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:115:1).
+; Unable to resolve symbol: set-key-with-ttl in this context
+clj꞉locks.core꞉> 
+; starting locking......
+; starting locking......
+nil
+clj꞉locks.handlers.users꞉> 
+(set-key-with-ttl  *res *ide *dur)
+; Execution error (ClassCastException) at (REPL:1).
+; null
+clj꞉locks.handlers.users꞉> 
+(set-key-with-ttl  (str *res) (str *ide) *dur)
+; Execution error (ClassCastException) at (REPL:1).
+; null
+clj꞉locks.handlers.users꞉> 
+(set-key-with-ttl  *res *ide (int *dur))
+; Execution error (ClassCastException) at (REPL:1).
+; null
+clj꞉locks.handlers.users꞉> 
+(set-key-with-ttl  *res *ide 4)
+"OK"
+clj꞉locks.handlers.users꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(stop-server)
+; Server stopped
+nil
+clj꞉locks.core꞉> 
+#'locks.handlers.users/releaseLocks
+clj꞉locks.handlers.users꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(start-server)
+#'locks.core/-main
+clj꞉locks.core꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(stop-server)
+nil
+clj꞉locks.core꞉> 
+(start-server)
+; Server started on port 3000
+nil
+clj꞉locks.core꞉> 
+; starting locking......
+; Syntax error compiling at (src/locks/handlers/users.clj:1:8626).
+; Unable to resolve symbol: strBody in this context
+clj꞉locks.handlers.users꞉> 
+(set-key-with-ttl  *res *ide (Integer/parseInt *dur))
+"OK"
+clj꞉locks.handlers.users꞉> 
+#'locks.handlers.users/releaseLocks
+clj꞉locks.handlers.users꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(start-server)
+; Execution error (BindException) at sun.nio.ch.Net/bind0 (Net.java:-2).
+; Address already in use
+clj꞉locks.core꞉> 
+(stop-server)
+; Server stopped
+nil
+clj꞉locks.core꞉> 
+(start-server)
+; Server started on port 3000
+nil
+clj꞉locks.core꞉> 
+; starting locking......
+"OK"
+clj꞉locks.handlers.users꞉> 
+; Syntax error compiling at (src/locks/handlers/users.clj:124:13).
+; Unable to resolve symbol: resource in this context
+clj꞉locks.handlers.users꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(stop-server)
+; Server stopped
+nil
+clj꞉locks.core꞉> 
+(start-server)
+; Server started on port 3000
+nil
+clj꞉locks.core꞉> 
+; starting locking......
+#'locks.handlers.users/releaseLocks
+clj꞉locks.handlers.users꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(stop-server)
+; Server stopped
+nil
+clj꞉locks.core꞉> 
+(start-server)
+; Server started on port 3000
+nil
+clj꞉locks.core꞉> 
+; health check function called
+; health check function called
+; starting locking......
+; starting locking......
+; starting locking......
+; starting locking......
+; starting locking......
+; starting locking......
+(stop-server)
+; Server stopped
+nil
+clj꞉locks.core꞉> 
+#'locks.handlers.users/releaseLocks
+clj꞉locks.handlers.users꞉> 
+#'locks.handlers.users/releaseLocks
+clj꞉locks.handlers.users꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(start-server)
+; Server started on port 3000
+nil
+clj꞉locks.core꞉> 
+; starting locking......
+; starting locking......
+(stop-server)
+; Server stopped
+nil
+clj꞉locks.core꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in Terminal: (cd /src/clojure/locks/locks; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless)
+; Using host:port 127.0.0.1:33077 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉locks.core꞉> 
+; Jack-in done.
+clj꞉locks.core꞉> 
+#'locks.handlers.users/releaseLocks
+clj꞉locks.handlers.users꞉> 
+#'locks.routes.routes/app-routes
+clj꞉locks.routes.routes꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(start-server)
+; Server started on port 3000
+nil
+clj꞉locks.core꞉> 
+; starting locking......
+; locked
+; starting locking......
+; locked
+; starting locking......
+; locked
+; releasing locks.....
+; lock released
+; starting locking......
+; locked
+; releasing locks.....
+; lock released
+; health check function called
+; starting locking......
+; locked
+; releasing locks.....
+; lock released
+; starting locking......
+; locked
+; releasing locks.....
+; lock released
+; starting locking......
+; locked
+; releasing locks.....
+; lock released
+(stop-server)
+; Server stopped
+nil
+clj꞉locks.core꞉> 
+(start-server)
+; Server started on port 3000
+nil
+clj꞉locks.core꞉> 
+(stop-server)\; Server stopped
+nil
+clj꞉locks.core꞉> 
+nil
+clj꞉locks.core꞉> 
+#'locks.handlers.users/releaseLocks
+clj꞉locks.handlers.users꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(start-server)
+; Server started on port 3000
+nil
+clj꞉locks.core꞉> 
+; starting locking......
+; locked
+; releasing locks.....
+; lock released
+; starting locking......
+; locked
+; releasing locks.....
+; lock released
+; nREPL Connection was closed
