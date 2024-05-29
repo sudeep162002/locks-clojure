@@ -1,3 +1,145 @@
+# version: '3.8'
+
+# networks:
+#   locks-network:
+#     driver: bridge
+
+# services:
+#   # Main application service
+#   lock-manager:
+#     image: sudeep162002/lock-manager:latest
+#     container_name: lock-manager
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - REDIS_HOST=redis-container
+#     networks:
+#       - locks-network
+
+#   # Redis sidecar container with snapshot script
+#   redis-container:
+#     image: sudeep162002/consistent-redis:latest
+#     container_name: redis-container
+#     ports:
+#       - "6379:6379"
+#     environment:
+#       - REDIS_INSTANCE_ID=0
+#       - MONGO_HOST=mongo-container
+#       - MONGO_DATABASE=mydatabase
+#     networks:
+#       - locks-network
+
+  
+#   #------------------------------------------------------------------------------
+
+#   lock-manager-1:
+#     image: sudeep162002/lock-manager:latest
+#     container_name: lock-manager
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - REDIS_HOST=redis-container-1
+#     networks:
+#       - locks-network
+
+#   # Redis sidecar container with snapshot script
+#   redis-container-1:
+#     image: sudeep162002/consistent-redis:latest
+#     container_name: redis-container-1
+#     ports:
+#       - "6379:6379"
+#     environment:
+#       - REDIS_INSTANCE_ID=1
+#       - MONGO_HOST=mongo-container
+#       - MONGO_DATABASE=mydatabase
+#     networks:
+#       - locks-network
+# #---------------------------------------------------------------------------------------
+
+#   lock-manager-2:
+#     image: sudeep162002/lock-manager:latest
+#     container_name: lock-manager-2
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - REDIS_HOST=redis-container-2
+#     networks:
+#       - locks-network
+
+#   # Redis sidecar container with snapshot script
+#   redis-container-2:
+#     image: sudeep162002/consistent-redis:latest
+#     container_name: redis-container-2
+#     ports:
+#       - "6379:6379"
+#     environment:
+#       - REDIS_INSTANCE_ID=2
+#       - MONGO_HOST=mongo-container
+#       - MONGO_DATABASE=mydatabase
+#     networks:
+#       - locks-network
+# #---------------------------------------------------------------------------------------
+
+#   # MongoDB service
+#   mongo:
+#     image: mongo:latest
+#     container_name: mongo-container
+#     ports:
+#       - "27017:27017"
+#     networks:
+#       - locks-network
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # version: '3.8'
+
+# # services:
+# #   lock-manager:
+# #     image: sudeep162002/lock-manager:latest
+# #     container_name: lock-manager
+# #     ports:
+# #       - "3000:3000"
+# #     environment:
+# #       - REDIS_HOST=redis-container
+# #     networks:
+# #       - locks-network
+
+# #   redis-container:
+# #     image: redis:latest
+# #     container_name: redis-container
+# #     ports:
+# #       - "6379:6379"
+# #     networks:
+# #       - locks-network
+
+# # networks:
+# #   locks-network:
+# #     driver: bridge
 version: '3.8'
 
 networks:
@@ -23,11 +165,63 @@ services:
     ports:
       - "6379:6379"
     environment:
+      - REDIS_INSTANCE_ID=0
+      - MONGO_HOST=mongo-container
+      - MONGO_DATABASE=mydatabase
+    networks:
+      - locks-network
+
+  #------------------------------------------------------------------------------ 
+
+  lock-manager-1:
+    image: sudeep162002/lock-manager:latest
+    container_name: lock-manager-1
+    ports:
+      - "3001:3000"
+    environment:
+      - REDIS_HOST=redis-container-1
+    networks:
+      - locks-network
+
+  # Redis sidecar container with snapshot script
+  redis-container-1:
+    image: sudeep162002/consistent-redis:latest
+    container_name: redis-container-1
+    ports:
+      - "6380:6379"
+    environment:
       - REDIS_INSTANCE_ID=1
       - MONGO_HOST=mongo-container
       - MONGO_DATABASE=mydatabase
     networks:
       - locks-network
+
+  #---------------------------------------------------------------------------------------
+
+  lock-manager-2:
+    image: sudeep162002/lock-manager:latest
+    container_name: lock-manager-2
+    ports:
+      - "3002:3000"
+    environment:
+      - REDIS_HOST=redis-container-2
+    networks:
+      - locks-network
+
+  # Redis sidecar container with snapshot script
+  redis-container-2:
+    image: sudeep162002/consistent-redis:latest
+    container_name: redis-container-2
+    ports:
+      - "6381:6379"
+    environment:
+      - REDIS_INSTANCE_ID=2
+      - MONGO_HOST=mongo-container
+      - MONGO_DATABASE=mydatabase
+    networks:
+      - locks-network
+
+  #---------------------------------------------------------------------------------------
 
   # MongoDB service
   mongo:
@@ -37,55 +231,3 @@ services:
       - "27017:27017"
     networks:
       - locks-network
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# version: '3.8'
-
-# services:
-#   lock-manager:
-#     image: sudeep162002/lock-manager:latest
-#     container_name: lock-manager
-#     ports:
-#       - "3000:3000"
-#     environment:
-#       - REDIS_HOST=redis-container
-#     networks:
-#       - locks-network
-
-#   redis-container:
-#     image: redis:latest
-#     container_name: redis-container
-#     ports:
-#       - "6379:6379"
-#     networks:
-#       - locks-network
-
-# networks:
-#   locks-network:
-#     driver: bridge
