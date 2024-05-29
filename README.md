@@ -1,6 +1,7 @@
-<div style="text-align: center;">
- <img src="https://github.com/sudeep162002/locks-clojure/assets/80563363/620e863f-7f29-423e-aff7-db7ccb7907d4" alt="Gemini_Generated_Image_kp91e9kp91e9kp91">
-</div>
+<p align="center" width="100%">
+ <img src="https://github.com/sudeep162002/locks-clojure/assets/80563363/0d44082d-cdd0-45ff-8fd5-818d955a0998" alt="Gemini_Generated_Image_kp91e9kp91e9kp91">
+</p>
+<!-- ![334918914-620e863f-7f29-423e-aff7-db7ccb7907d4-removebg-preview](https://github.com/sudeep162002/locks-clojure/assets/80563363/0d44082d-cdd0-45ff-8fd5-818d955a0998) -->
 
 **Title:** Highly Available Distributed Lock System (Clojure)
 
