@@ -1,4 +1,4 @@
-![Gemini_Generated_Image_kp91e9kp91e9kp91](https://github.com/sudeep162002/locks-clojure/assets/80563363/e0ae702e-ff60-4b8f-9f68-aa454a673fab)
+![Gemini_Generated_Image_kp91e9kp91e9kp91](https://github.com/sudeep162002/locks-clojure/assets/80563363/620e863f-7f29-423e-aff7-db7ccb7907d4)
 
 **Title:** Highly Available Distributed Lock System (Clojure)
 
