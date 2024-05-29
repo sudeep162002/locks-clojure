@@ -1,6 +1,6 @@
 <div style="text-align: center;">
-  <img src="https://github.com/sudeep162002/locks-clojure/assets/80563363/620e863f-7f29-423e-aff7-db7ccb7907d4" alt="Gemini_Generated_Image_kp91e9kp91e9kp91">
-</div>
+  <img src="https://github.com/sudeep162002/locks-clojure/assets/80563363/620e863f-7f29-423e-aff7-db7ccb7907d4" alt="Gemini_Generated_Image_kp91e9kp91e9kp91" width="50%"> </div>
+
 
 **Title:** Highly Available Distributed Lock System (Clojure)
 
