@@ -1,0 +1,26 @@
+# Use the official Redis image as the base
+FROM redis:latest
+
+# Install cron
+RUN apt-get update && apt-get install -y cron
+
+# Copy the snapshot script into the container
+COPY backup.sh /usr/local/bin/snapshot.sh
+
+# Make the snapshot script executable
+RUN chmod +x /usr/local/bin/snapshot.sh
+
+# Copy the crontab file into the container
+COPY crontab /etc/cron.d/redis-snapshot-cron
+
+# Give execution rights on the cron job
+RUN chmod 0644 /etc/cron.d/redis-snapshot-cron
+
+# Apply the cron job
+RUN crontab /etc/cron.d/redis-snapshot-cron
+
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
+
+# Start Redis and cron in the same command
+CMD service cron start && redis-server

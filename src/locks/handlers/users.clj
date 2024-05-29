@@ -43,8 +43,16 @@
 ;;   {:status 200
 ;;    :body (str "user deleted sucessfully for name = " name)})
 
-(def pool (JedisPool. (JedisPoolConfig.) "redis-container" 6379))
+;; (def pool (JedisPool. (JedisPoolConfig.) "redis-container" 6379))
+(def REDIS_HOST (System/getenv "REDIS_HOST"))  ; Get Redis host from environment variable
 
+(println "Redis Host:" REDIS_HOST)
+
+(def pool (JedisPool.
+           (JedisPoolConfig.)  ; Default Jedis pool configuration
+           REDIS_HOST          ; Use the retrieved host
+           6379                ; Port remains 6379
+           ))
 
 
 

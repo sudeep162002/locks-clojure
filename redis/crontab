@@ -1,0 +1,2 @@
+# Run the snapshot script every hour
+0 * * * * /usr/local/bin/snapshot.sh >> /var/log/cron.log 2>&1
