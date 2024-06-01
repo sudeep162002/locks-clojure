@@ -140,6 +140,13 @@
 # # networks:
 # #   locks-network:
 # #     driver: bridge
+
+
+
+
+
+
+# -------------------------------------------------------------------------------------------------------
 version: '3.8'
 
 networks:
@@ -229,5 +236,13 @@ services:
     container_name: mongo-container
     ports:
       - "27017:27017"
+    networks:
+      - locks-network
+
+  lock-interface:
+    image: sudeep162002/lock-manager-interface:latest
+    container_name: lock-interface
+    ports:
+      - "4000:4000"
     networks:
       - locks-network

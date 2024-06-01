@@ -37,7 +37,15 @@ You can configure this with the setting:
 ; 
 
 ; Starting Jack-in Terminal: (cd /src/clojure/locks/locks; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless)
-; Using host:port 127.0.0.1:42023 ...
+; Interrupting Jack-in process.
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in Terminal: (cd /src/clojure/locks/locks; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless)
+; Using host:port 127.0.0.1:43081 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -48,11 +56,20 @@ about why stdout printed to this file is prepended with `;` to be line comments.
 clj꞉locks.core꞉> 
 ; Jack-in done.
 clj꞉locks.core꞉> 
-#'locks.handlers.users/pool
-clj꞉locks.handlers.users꞉> 
-#'locks.handlers.users/REDIS_HOST
-clj꞉locks.handlers.users꞉> 
 ; Redis Host: redis-container
-nil
+#'locks.handlers.users/releaseLocks
 clj꞉locks.handlers.users꞉> 
-; nREPL Connection was closed
+#'locks.routes.routes/app-routes
+clj꞉locks.routes.routes꞉> 
+#'locks.core/-main
+clj꞉locks.core꞉> 
+(start-server)
+; Server started on port 3000
+nil
+clj꞉locks.core꞉> 
+; Connecting using "undefined" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Aborting jack-in. No project type selected.

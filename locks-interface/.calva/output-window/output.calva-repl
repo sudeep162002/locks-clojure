@@ -1,0 +1,320 @@
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in Terminal: (cd /src/clojure/locks/locks/locks-interface; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless)
+; Using host:port 127.0.0.1:40371 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉locks-interface.core꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉locks-interface.core꞉> 
+; Jack-in done.
+clj꞉locks-interface.core꞉> 
+#'locks-interface.core/-main
+clj꞉locks-interface.core꞉> 
+#'locks-interface.routes.routes/app-routes
+clj꞉locks-interface.routes.routes꞉> 
+#'locks-interface.handlers.users/releaseLocks
+clj꞉locks-interface.handlers.users꞉> 
+#'locks-interface.handlers.users/releaseLocks
+clj꞉locks-interface.handlers.users꞉> 
+#'locks-interface.core/-main
+clj꞉locks-interface.core꞉> 
+(start-server)
+; Server started on port 4000
+nil
+; 
+; 2024-06-01 16:57:52.089:INFO:oejs.Server:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
+; 2024-06-01 16:57:52.716:INFO:oejs.AbstractConnector:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: Started ServerConnector@3fe5a631{HTTP/1.1, (http/1.1)}{0.0.0.0:4000}
+; 2024-06-01 16:57:52.716:INFO:oejs.Server:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: Started @1109768ms
+clj꞉locks-interface.core꞉> 
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; finishing locking of  http://lock-manager:3000/get-lock
+; starting locking of  http://lock-manager-1:3000/get-lock
+; finishing locking of  http://lock-manager-1:3000/get-lock
+; starting locking of  http://lock-manager-2:3000/get-lock
+; finishing locking of  http://lock-manager-2:3000/get-lock
+; Lock count: 3
+; Threshold (noOfInstances / 2): 3/2
+; locked
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 0
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 0
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 0
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; finishing locking of  http://lock-manager:3000/get-lock
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 1
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; finishing locking of  http://lock-manager-1:3000/get-lock
+; starting locking of  http://lock-manager-2:3000/get-lock
+; finishing locking of  http://lock-manager-2:3000/get-lock
+; Lock count: 2
+; Threshold (noOfInstances / 2): 3/2
+; locked
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 0
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 0
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 0
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 0
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; finishing locking of  http://lock-manager:3000/get-lock
+; starting locking of  http://lock-manager-1:3000/get-lock
+; finishing locking of  http://lock-manager-1:3000/get-lock
+; starting locking of  http://lock-manager-2:3000/get-lock
+; finishing locking of  http://lock-manager-2:3000/get-lock
+; Lock count: 3
+; Threshold (noOfInstances / 2): 3/2
+; locked
+; releasing locks.....
+; starting release of  http://lock-manager:3000/get-lock
+; Bad Request: {"error":"Missing required fields"}
+; starting release of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"error":"Missing required fields"}
+; starting release of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"error":"Missing required fields"}
+; not able to acquire more then half lock
+#'locks-interface.handlers.users/releaseLocks
+clj꞉locks-interface.handlers.users꞉> 
+#'locks-interface.core/-main
+clj꞉locks-interface.core꞉> 
+(stop-server)
+; Server stopped
+nil
+; 
+; 2024-06-01 17:05:43.590:INFO:oejs.AbstractConnector:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: Stopped ServerConnector@3fe5a631{HTTP/1.1, (http/1.1)}{0.0.0.0:4000}
+clj꞉locks-interface.core꞉> 
+(start-server)
+; Server started on port 4000
+nil
+; 
+; 2024-06-01 17:05:50.423:INFO:oejs.Server:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
+; 2024-06-01 17:05:50.427:INFO:oejs.AbstractConnector:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: Started ServerConnector@58b22900{HTTP/1.1, (http/1.1)}{0.0.0.0:4000}
+; 2024-06-01 17:05:50.427:INFO:oejs.Server:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: Started @1587496ms
+clj꞉locks-interface.core꞉> 
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; finishing locking of  http://lock-manager:3000/get-lock
+; starting locking of  http://lock-manager-1:3000/get-lock
+; finishing locking of  http://lock-manager-1:3000/get-lock
+; starting locking of  http://lock-manager-2:3000/get-lock
+; finishing locking of  http://lock-manager-2:3000/get-lock
+; Lock count: 3
+; Threshold (noOfInstances / 2): 3/2
+; locked
+; releasing locks.....
+; starting release of  http://lock-manager:3000/get-lock
+; Bad Request: {"error":"Missing required fields"}
+; starting release of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"error":"Missing required fields"}
+; starting release of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"error":"Missing required fields"}
+; not able to acquire more then half lock
+(stop-server)
+; Server stopped
+nil
+; 
+; 2024-06-01 17:06:34.971:INFO:oejs.AbstractConnector:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: Stopped ServerConnector@58b22900{HTTP/1.1, (http/1.1)}{0.0.0.0:4000}
+clj꞉locks-interface.core꞉> 
+#'locks-interface.routes.routes/app-routes
+clj꞉locks-interface.routes.routes꞉> 
+#'locks-interface.handlers.users/releaseLocks
+clj꞉locks-interface.handlers.users꞉> 
+()#'locks-interface.core/-main
+clj꞉locks-interface.core꞉> 
+#'locks-interface.core/-main
+clj꞉locks-interface.core꞉> 
+#'locks-interface.core/-main
+clj꞉locks-interface.core꞉> 
+(start-server)
+; Server started on port 4000
+nil
+; 
+; 2024-06-01 17:06:56.427:INFO:oejs.Server:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: jetty-9.4.36.v20210114; built: 2021-01-14T16:44:28.689Z; git: 238ec6997c7806b055319a6d11f8ae7564adc0de; jvm 21.0.3+9-LTS
+; 2024-06-01 17:06:56.430:INFO:oejs.AbstractConnector:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: Started ServerConnector@7ba2f9bd{HTTP/1.1, (http/1.1)}{0.0.0.0:4000}
+; 2024-06-01 17:06:56.430:INFO:oejs.Server:nREPL-session-1db8dc71-ffa5-42e2-ae2d-9960220aebc1: Started @1653503ms
+clj꞉locks-interface.core꞉> 
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; finishing locking of  http://lock-manager:3000/get-lock
+; starting locking of  http://lock-manager-1:3000/get-lock
+; finishing locking of  http://lock-manager-1:3000/get-lock
+; starting locking of  http://lock-manager-2:3000/get-lock
+; finishing locking of  http://lock-manager-2:3000/get-lock
+; Lock count: 3
+; Threshold (noOfInstances / 2): 3/2
+; locked
+; releasing locks.....
+; starting release of  http://lock-manager:3000/release-lock
+; finishing release of  http://lock-manager:3000/release-lock
+; starting release of  http://lock-manager-1:3000/release-lock
+; finishing release of  http://lock-manager-1:3000/release-lock
+; starting release of  http://lock-manager-2:3000/release-lock
+; finishing release of  http://lock-manager-2:3000/release-lock
+; lock released
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; finishing locking of  http://lock-manager:3000/get-lock
+; starting locking of  http://lock-manager-1:3000/get-lock
+; finishing locking of  http://lock-manager-1:3000/get-lock
+; starting locking of  http://lock-manager-2:3000/get-lock
+; finishing locking of  http://lock-manager-2:3000/get-lock
+; Lock count: 3
+; Threshold (noOfInstances / 2): 3/2
+; locked
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 0
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-1:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; starting locking of  http://lock-manager-2:3000/get-lock
+; Bad Request: {"message":"Lock already exists on resource r2  by us8. Please wait, we don't want conflicts."}
+; Lock count: 0
+; Threshold (noOfInstances / 2): 3/2
+; not able to acquire more than half lock
+; releasing locks.....
+; starting release of  http://lock-manager:3000/release-lock
+; finishing release of  http://lock-manager:3000/release-lock
+; starting release of  http://lock-manager-1:3000/release-lock
+; finishing release of  http://lock-manager-1:3000/release-lock
+; starting release of  http://lock-manager-2:3000/release-lock
+; finishing release of  http://lock-manager-2:3000/release-lock
+; lock released
+; starting locking......
+; starting locking of  http://lock-manager:3000/get-lock
+; finishing locking of  http://lock-manager:3000/get-lock
+; starting locking of  http://lock-manager-1:3000/get-lock
+; finishing locking of  http://lock-manager-1:3000/get-lock
+; starting locking of  http://lock-manager-2:3000/get-lock
+; finishing locking of  http://lock-manager-2:3000/get-lock
+; Lock count: 3
+; Threshold (noOfInstances / 2): 3/2
+; locked
+; releasing locks.....
+; starting release of  http://lock-manager:3000/release-lock
+; finishing release of  http://lock-manager:3000/release-lock
+; starting release of  http://lock-manager-1:3000/release-lock
+; finishing release of  http://lock-manager-1:3000/release-lock
+; starting release of  http://lock-manager-2:3000/release-lock
+; finishing release of  http://lock-manager-2:3000/release-lock
+; lock released

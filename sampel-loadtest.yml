@@ -1,0 +1,38 @@
+config:
+  target: 'http://localhost:4000'
+  phases:
+    - duration: 25  # Warm-up phase duration (5 minutes)
+      arrivalRate: 5  # Gradually increase arrival rate
+    - duration: 50  # Peak phase duration (10 minutes)
+      arrivalRate: 10  # Sustain maximum arrival rate
+    - duration: 5
+      arrivalRate: 1
+
+
+scenarios:
+  - flow:
+      - get:
+          url: '/short'
+          capture:
+            json: $.code
+            as: 'generatedCode'
+      - post:
+          url: '/short'
+          json:
+            url: 'https://www.example.com'
+            expire: '{{ date }}'
+          capture:
+            json: '$.code'
+            as: 'generatedCode'
+      - get:
+          url: '/short/{{ generatedCode }}'
+      - get:
+          url: '/ping'
+      - get:
+          url: '/short/{{ generatedCode }}/stats'
+
+variables:
+  - name: date
+    max: 2025-12-31T23:59:59.999Z
+    min: 2023-01-01T00:00:00.000Z
+    type: dateIso8601

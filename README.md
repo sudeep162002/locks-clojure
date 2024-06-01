@@ -68,3 +68,5 @@ This project is licensed under the MIT License ([https://opensource.org/license/
 
 By following these guidelines, you can create a compelling and informative GitHub README that effectively promotes your distributed lock system in Clojure.
 
+# todo 
+1. if lock is already released then no need to release again 
