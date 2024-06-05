@@ -41,6 +41,9 @@
 
 
 
+(defn async-get-i-locks [it resource duration identity]
+  (future
+    (get-i-locks it resource duration identity)))
 
 
 (defn release-i-locks [turl resource identity]
@@ -66,6 +69,13 @@
           (if (not= status 200)
             (do
               (println "Bad Request:" body))))))))
+
+
+(defn async-release-i-locks [it resource  identity]
+  (future
+    (release-i-locks it resource  identity)))
+
+
 ;; (comment
 
 ;;   (defn post-request [base-url]
@@ -111,10 +121,23 @@
           (def *ide identity)
           (def *dur duration)
 
-         (let [lock-count (atom 0)]
-           (doseq [it LockingInstances]
-             (if (= (:status (get-i-locks it resource duration identity)) 200)
-               (swap! lock-count inc)))
+         (let [lock-count (atom 0)
+      promisses (map (fn [it] 
+                       (let [p (promise)]
+                         (future 
+                           (let [res @(async-get-i-locks it resource duration identity)]
+                             (when (= (:status res) 200)
+                               (swap! lock-count inc))
+                             (deliver p :done)))
+                         p))
+                     LockingInstances)]
+  ;; (doseq [it LockingInstances]
+  ;;   (if (= (:status (get-i-locks it resource duration identity)) 200)
+  ;;     (swap! lock-count inc)))
+  (doseq [p promisses] 
+    @p)
+
+
          
            (let [lcc @lock-count
                  threshold (/ noOfInstances 2)]
@@ -163,10 +186,28 @@
           (println (str "releasing locks....."))
           
 
-          (let [ulock-count (atom 0)]
-            (doseq [it UnlockingInstances]
-              (if (= (:status (release-i-locks it resource  identity)) 200)
-                (swap! ulock-count inc)))
+          ;; (let [ulock-count (atom 0)]
+          ;;   (doseq [it UnlockingInstances]
+          ;;     (if (= (:status (release-i-locks it resource  identity)) 200)
+          ;;       (swap! ulock-count inc)))
+
+
+          (let [ulock-count (atom 0)
+                promisses (map (fn [it]
+                                 (let [p (promise)]
+                                   (future
+                                     (let [res @(async-release-i-locks it resource identity)]
+                                       (when (= (:status res) 200)
+                                         (swap! ulock-count inc))
+                                       (deliver p :done)))
+                                   p))
+                               UnlockingInstances)]
+            
+            (doseq [p promisses]
+              @p)
+            
+
+            
           
             (if (> @ulock-count (/ noOfInstances 2))
               (do
