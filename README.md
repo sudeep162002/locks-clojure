@@ -17,6 +17,12 @@ This repository implements a robust, high-availability distributed lock system d
 - **Dockerized:** Facilitates deployment and scaling in containerized environments.
 - **Clojure-Friendly API:** Provides a clean and concise Clojure API for seamless integration with your microservices.
 
+
+
+
+![1717586008971](https://github.com/sudeep162002/locks-clojure/assets/80563363/79739e5d-ccda-49a3-a167-a6041eed3af8)
+
+
 **Getting Started:**
 
 1. **Prerequisites:**
